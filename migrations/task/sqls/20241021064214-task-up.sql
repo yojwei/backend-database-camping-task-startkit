@@ -306,14 +306,14 @@ limit 1;
 SELECT package.name as "組合包方案名稱", count(purchase.id) FROM "CREDIT_PURCHASE" purchase 
 INNER JOIN "CREDIT_PACKAGE" package on package.id = purchase.credit_package_id
 WHERE EXTRACT(MONTH FROM purchase_at)  = 11
-GROUP BY package.name
+GROUP BY package.name;
 
 -- 6-4. 查詢：計算 11 月份總營收（使用 purchase_at 欄位統計）
 -- 顯示須包含以下欄位： 總營收
 SELECT sum(purchase.price_paid) FROM "CREDIT_PURCHASE" purchase 
-WHERE EXTRACT(MONTH FROM purchase_at)  = 11
+WHERE EXTRACT(MONTH FROM purchase_at)  = 11;
 
 -- 6-5. 查詢：計算 11 月份有預約課程的會員人數（需使用 Distinct，並用 created_at 和 status 欄位統計）
 -- 顯示須包含以下欄位： 預約會員人數
-select COUNT(DISTINCT user_id) AS "預約會員人數" FROM "COURSE_BOOKING"
-WHERE EXTRACT(MONTH FROM created_at)  = 11 AND status = '即將授課'
+SELECT COUNT(DISTINCT user_id) AS "預約會員人數" FROM "COURSE_BOOKING"
+WHERE EXTRACT(MONTH FROM created_at)  = 11 AND status = '即將授課';
