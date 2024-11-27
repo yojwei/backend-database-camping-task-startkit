@@ -49,7 +49,7 @@ SELECT * FROM "USER" limit 3;
 INSERT INTO "CREDIT_PACKAGE" (name, credit_amount, price) VALUES
 ('7 堂組合包方案',7, 1400),
 ('14 堂組合包方案',14, 2520),
-('21 堂組合包方案',7, 4800);
+('21 堂組合包方案',21, 4800);
 
 -- 2-2. 新增：在 `CREDIT_PURCHASE` 資料表，新增三筆資料：（請使用 name 欄位做子查詢）
     -- 1. `王小明` 購買 `14 堂組合包方案`
